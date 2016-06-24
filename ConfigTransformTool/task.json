@@ -1,0 +1,55 @@
+{
+  "id": "f967fd0a-4a82-4a21-84da-35dd062f343f",
+  "name": "ConfigTransformTool",
+  "friendlyName": "Configuration Transform Tool",
+  "description": "Use this to run web transforms using config files.",
+  "author": "Darnell McMurrian",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [
+     "DotNetFramework"
+  ],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "6"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "ConfigTransformTool $(message)",
+  "inputs": [
+    {
+        "name": "SourceConfigFile",
+        "type": "filePath",
+        "label": "Source Config File",
+        "defaultValue": "Web.config",
+        "required": true
+    },
+    {
+        "name": "TransformConfigFile",
+        "type": "filePath",
+        "label": "Transformation Config File",
+        "defaultValue": "Web.Release.config",
+        "required": true,
+        "helpMarkDown": "The file that you want to be used as the transformation file (i.e. web.test.config, web.beta.config)"
+    },
+        {
+        "name": "SourcePath",
+        "type": "filePath",
+        "label": "Source Path",
+        "defaultValue": "$(System.DefaultWorkingDirectory)",
+        "required": true,
+        "helpMarkDown": "The path the the config files directory."
+    }
+  ],
+  "execution": {
+    "Powershell": {
+      "target":"$(currentDirectory)\\Invoke-ConfigTransformTool.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}
