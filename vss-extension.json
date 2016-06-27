@@ -1,8 +1,8 @@
 {
   "manifestVersion": 1,
-  "id": "sd-config-transform-tool",
-  "version": "0.1.13",
-  "name": "Config Transformation Tool",
+  "id": "sd-transformer",
+  "version": "0.1.14",
+  "name": "Config Transformation Tool (AKA Transformer)",
   "description": "Config Transformation Tool",
   "publisher": "darnellmcmurrian",
   "public": false,
@@ -18,7 +18,7 @@
   ],
   "contributions": [
         {
-            "id": "sd-config-transform-tool",
+            "id": "sd-transformer",
             "type": "ms.vss-distributed-task.task",
             "description": "Config transform with CTT.exe",
             "targets": [
@@ -31,7 +31,7 @@
   ],
   "files": [
     {
-      "path": "tools",
+      "path": "ConfigTransformTool",
       "addressable": true
     }
   ]
