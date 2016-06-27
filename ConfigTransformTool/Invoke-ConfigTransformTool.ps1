@@ -18,6 +18,7 @@ param(
 Import-Module "Microsoft.TeamFoundation.DistributedTask.Task.Common"
 
 function ValidateParameters () {
+    Write-Host "Validating parameters"
     if ((Test-Path -Path $SourcePath) -eq $false) {
         $exitcode = $LASTEXITCODE
         echo $exitcode
@@ -53,11 +54,40 @@ function ValidateParameters () {
 
 }
 
+function FindCTTFile () {
+    if ((Test-Path -Path .\tools -Include "ctt.exe" -PathType Leaf) -eq $false) {
+        $exitcode = $LASTEXITCODE
+        echo $exitcode
+        Write-Host "The Config Transformation Tool ctt.exe was not found!" -BackgroundColor Red
+        exit $exitcode 
+    }
+    return $cttFileInfo = Get-ChildItem -Path . -Recurse -Include "ctt.exe"
+}
 
 
+Write-Host "Validating Parameters"
 ValidateParameters
+Write-Host "Parameters are valid"
+
+Write-Host "Locating the Config Transform Tool (CTT.EXE)"
+$cttFile = FindCTTFile
+Write-Host "Tool found!"
 
 
+
+try {
+    Write-Host "Beginning Transformation"
+    $destinationFile = [System.IO.Path]::Combine($SourcePath,"transformed.config")
+    Start-Process -FilePath $cttFile.FullName -ArgumentList (s:$SourceConfigFile t:$TransformConfigFile d:$destinationFile) -Wait
+    [System.IO.File]::Replace($destinationFile,$SourceConfigFile,"$SourceConfigFile + .bak")
+
+    Write-Host "Transformation Complete."
+
+}
+catch [System.Exception] {
+    $exitCode = $LASTEXITCODE
+    exit $exitCode
+}
 
 
 Trace-VstsEnteringInvocation $MyInvocation
