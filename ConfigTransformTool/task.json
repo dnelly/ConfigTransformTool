@@ -16,7 +16,7 @@
   "version": {
     "Major": "0",
     "Minor": "1",
-    "Patch": "10"
+    "Patch": "11"
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "ConfigTransformTool $(message)",
@@ -26,7 +26,8 @@
         "type": "string",
         "label": "Source Config File",
         "defaultValue": "Web.config",
-        "required": true
+        "required": true,
+        "helpMarkDown": "The file that will be used as the source of the transformation.  It can be a web.config or {ExecutiableName}.exe.config"
     },
     {
         "name": "TransformConfigFile",
@@ -34,7 +35,7 @@
         "label": "Transformation Config File",
         "defaultValue": "Web.Release.config",
         "required": true,
-        "helpMarkDown": "The file that you want to be used as the transformation file (i.e. web.test.config, web.beta.config)"
+        "helpMarkDown": "The file that you want to be used as the transformation file (i.e. web.test.config, web.beta.config or app.test.config, app.beta.config)"
     },
         {
         "name": "SourcePath",
