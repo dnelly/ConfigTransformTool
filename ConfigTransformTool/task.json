@@ -4,7 +4,7 @@
   "friendlyName": "Configuration Transform Tool",
   "description": "Use this to run web transforms using config files.",
   "author": "Darnell McMurrian",
-  "helpMarkDown": "Replace with markdown to show in help",
+  "helpMarkDown": "",
   "category": "Utility",
   "visibility": [
     "Build",
@@ -16,7 +16,7 @@
   "version": {
     "Major": "0",
     "Minor": "1",
-    "Patch": "7"
+    "Patch": "9"
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "ConfigTransformTool $(message)",
