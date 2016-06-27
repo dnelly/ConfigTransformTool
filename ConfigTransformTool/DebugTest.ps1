@@ -1,0 +1,2 @@
+#.\Invoke-ConfigTransformTool.ps1 -SourceConfigFile "C:\temp\testcode\AdWorks.API\Web.config" -TransformConfigFile "C:\temp\testcode\AdWorks.API\Web.Release.config" -SourcePath C:\\temp\\testcode\\AdWorks.API
+.\Invoke-ConfigTransformTool.ps1 -SourceConfigFile "Web.config" -TransformConfigFile "Web.Release.config" -SourcePath C:\\temp\\testcode\\AdWorks.API

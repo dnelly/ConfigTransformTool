@@ -16,21 +16,21 @@
   "version": {
     "Major": "0",
     "Minor": "1",
-    "Patch": "9"
+    "Patch": "10"
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "ConfigTransformTool $(message)",
   "inputs": [
     {
         "name": "SourceConfigFile",
-        "type": "filePath",
+        "type": "string",
         "label": "Source Config File",
         "defaultValue": "Web.config",
         "required": true
     },
     {
         "name": "TransformConfigFile",
-        "type": "filePath",
+        "type": "string",
         "label": "Transformation Config File",
         "defaultValue": "Web.Release.config",
         "required": true,

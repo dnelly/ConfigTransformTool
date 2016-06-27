@@ -2,17 +2,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Extension",
-            "type": "extensionHost",
+            "name": "PowerShell",
+            "type": "PowerShell",
             "request": "launch",
-            "runtimeExecutable": "${execPath}",
-            "args": [
-                "--extensionDevelopmentPath=${workspaceRoot}"
-            ],
-            "stopOnEntry": false,
-            "sourceMaps": true,
-            "outDir": "${workspaceRoot}/out",
-            "preLaunchTask": "npm"
+            "program": "${file}",
+            "args": [],
+            "cwd": "${file}"
+        },
+        {
+            "name": "PowerShell x86",
+            "type": "PowerShell x86",
+            "request": "launch",
+            "program": "${file}",
+            "args": [],
+            "cwd": "${file}"
         }
     ]
 }
