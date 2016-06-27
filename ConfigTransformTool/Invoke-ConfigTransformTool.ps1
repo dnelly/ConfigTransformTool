@@ -72,15 +72,18 @@ function FindCTTFile () {
     return $cttFileInfo = Get-ChildItem -Path . -Recurse -Include "ctt.exe"
 }
 
+function PrintParameters () {
+    Write-Host "SourceConfigFile = $SourceConfigFile"
+    Write-Host "TransformConfigFile = $TransformConfigFile"
+    Write-Host "SourcePath = $SourcePath"
+}
 
+PrintParameters
 ValidateParameters
-
 
 Write-Host "Locating the Config Transform Tool (CTT.EXE)"
 $cttFile = FindCTTFile
 Write-Host "Tool found!"
-
-
 
 try {
     Write-Host "Beginning Transformation"

@@ -1,7 +1,7 @@
 {
   "id": "f967fd0a-4a82-4a21-84da-35dd062f343f",
-  "name": "ConfigTransformTool",
-  "friendlyName": "Configuration Transform Tool",
+  "name": "Transformer",
+  "friendlyName": "Configuration Transform Tool (AKA the Transformer)",
   "description": "Use this to run web transforms using config files.",
   "author": "Darnell McMurrian",
   "helpMarkDown": "",
@@ -15,11 +15,11 @@
   ],
   "version": {
     "Major": "0",
-    "Minor": "1",
-    "Patch": "11"
+    "Minor": "2",
+    "Patch": "12"
   },
   "minimumAgentVersion": "1.95.0",
-  "instanceNameFormat": "ConfigTransformTool $(message)",
+  "instanceNameFormat": "Transformer $(message)",
   "inputs": [
     {
         "name": "SourceConfigFile",
